@@ -9,6 +9,7 @@ import cookieParser from "cookie-parser";
 import UserRouter from "./routes/user.route.js";
 import FoodRouter from "./routes/food.route.js";
 import TableRouter from "./routes/table.route.js";
+import contactRoutes from "./routes/contact.route.js";
 
 const app = express();
 app.use(express.json());
@@ -23,6 +24,7 @@ app.use(
 app.use("/api/auth", UserRouter);
 app.use("/api/food", FoodRouter);
 app.use("/api/table", TableRouter);
+app.use("/api/contact", contactRoutes);
 
 
 dns.setServers(["8.8.8.8", "8.8.4.4"]);
