@@ -8,10 +8,10 @@ import dns from "dns";
 import cookieParser from "cookie-parser";
 import UserRouter from "./routes/user.route.js";
 import FoodRouter from "./routes/food.route.js";
+import TableRouter from "./routes/table.route.js";
 
 const app = express();
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(
   cors({
@@ -22,6 +22,8 @@ app.use(
 
 app.use("/api/auth", UserRouter);
 app.use("/api/food", FoodRouter);
+app.use("/api/table", TableRouter);
+
 
 dns.setServers(["8.8.8.8", "8.8.4.4"]);
 const PORT = process.env.PORT || 5500;
