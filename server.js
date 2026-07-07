@@ -16,7 +16,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: "https://food-frontend-sigma-flame.vercel.app",
     credentials: true,
   }),
 );
